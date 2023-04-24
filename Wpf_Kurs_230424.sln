@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grundlagen", "Grundlagen\Grundlagen.csproj", "{E1E5AF45-40F5-4F87-B1F6-2016035B531E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M01_Grundlagen", "Grundlagen\M01_Grundlagen.csproj", "{E1E5AF45-40F5-4F87-B1F6-2016035B531E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M02_Controls", "Controls\M02_Controls.csproj", "{93B9CC3D-D472-41FA-9182-E0472C6AFB49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E1E5AF45-40F5-4F87-B1F6-2016035B531E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E5AF45-40F5-4F87-B1F6-2016035B531E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1E5AF45-40F5-4F87-B1F6-2016035B531E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B9CC3D-D472-41FA-9182-E0472C6AFB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B9CC3D-D472-41FA-9182-E0472C6AFB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B9CC3D-D472-41FA-9182-E0472C6AFB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B9CC3D-D472-41FA-9182-E0472C6AFB49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

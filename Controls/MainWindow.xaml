@@ -1,0 +1,97 @@
+﻿<Window x:Class="Controls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="680" Width="370">
+    <StackPanel>
+
+        <Label x:Name="Lbl_Output"
+               Content="Hallo, ich bin ein String"
+               Foreground="Red"
+               FontSize="25"
+               FontFamily="Comic Sans MS"
+               BorderBrush="Black"
+               BorderThickness="2"
+               HorizontalAlignment="Right"
+               Width="350"
+               HorizontalContentAlignment="Center"/>
+
+        <TextBlock x:Name="Tbl_Output">
+            Hallo, <Underline>ich</Underline> bin <Bold>auch</Bold> ein<LineBreak/> String
+        </TextBlock>
+
+        <Button x:Name="Btn_KlickMich"
+                Content="Klick Mich"
+                Click="Btn_KlickMich_Click"
+                IsEnabled="True"
+                IsDefault="True"/>
+
+        <Image Source="Images/ppedv.bmp"
+               Height="60"
+               Stretch="Uniform"/>
+
+        <TextBox x:Name="Tbx_Input"
+                 Text="Hallo"
+                 Height="60"
+                 AcceptsReturn="True"
+                 AcceptsTab="True"
+                 TextWrapping="WrapWithOverflow"
+                 VerticalScrollBarVisibility="Visible">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Kopieren"/>
+                    <MenuItem Header="Ausschneiden"/>
+                    <MenuItem Header="Einfügen"/>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+
+        <ComboBox x:Name="Cbb_Auswahl"
+                  IsEditable="True">
+            <ComboBoxItem Content="Item1"/>
+            <ComboBoxItem Content="Auswahl2"/>
+            <ComboBoxItem Content="Eintrag3"/>
+        </ComboBox>
+
+        <CheckBox x:Name="Cbx_Haken"
+                  Content="Hak mich ab"
+                  IsChecked="{x:Null}"
+                  IsThreeState="True"/>
+
+        <RadioButton Content="Auswahl1" GroupName="Rbt_Group_01"/>
+        <RadioButton Content="Auswahl2" GroupName="Rbt_Group_01"/>
+        <RadioButton Content="Auswahl3" GroupName="Rbt_Group_02"/>
+        <RadioButton Content="Auswahl4" GroupName="Rbt_Group_02"/>
+
+        <Slider x:Name="Sdr_Wert"
+                Minimum="0"
+                Maximum="100"
+                Value="30"
+                TickPlacement="None"
+                IsSnapToTickEnabled="True"
+                TickFrequency="0.5"/>
+
+        <ProgressBar Minimum="0"
+                     Maximum="100"
+                     Value="70"
+                     Height="10"
+                     IsIndeterminate="True"/>
+
+        <Menu>
+            <MenuItem Header="_Datei">
+                <MenuItem Header="_Neu">
+                    <MenuItem Header="Neues _Fenster" Click="Fenster_Click"/>
+                    <MenuItem Header="Neues _Dialog-Fenster" Click="Dialog_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Schließen" Click="Schließen_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Hilfe"/>
+        </Menu>
+
+        <Button Content="OK" Click="OK_Click"/>
+
+    </StackPanel>
+</Window>
