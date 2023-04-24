@@ -94,7 +94,7 @@
 
         <Button Content="OK" Click="OK_Click"/>
 
-        <ribbon:Ribbon>
+        <ribbon:Ribbon >
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu>
                     <ribbon:RibbonApplicationMenuItem Header="Speichern"/>
