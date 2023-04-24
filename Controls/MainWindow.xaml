@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
         xmlns:local="clr-namespace:Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="680" Width="370">
@@ -92,6 +93,22 @@
         </Menu>
 
         <Button Content="OK" Click="OK_Click"/>
+
+        <ribbon:Ribbon>
+            <ribbon:Ribbon.ApplicationMenu>
+                <ribbon:RibbonApplicationMenu>
+                    <ribbon:RibbonApplicationMenuItem Header="Speichern"/>
+                </ribbon:RibbonApplicationMenu>
+            </ribbon:Ribbon.ApplicationMenu>
+
+            <ribbon:RibbonTab Header="Ansicht">
+                <ribbon:RibbonGroup Header="Listenansicht">
+                    <ribbon:RibbonButton/>
+                    <ribbon:RibbonComboBox/>
+                    <ribbon:RibbonCheckBox/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
 
     </StackPanel>
 </Window>
