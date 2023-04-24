@@ -1,8 +1,11 @@
-﻿<Application x:Class="Grundlagen.App"
+﻿<!--vgl. auch CodeBehind-->
+<Application x:Class="Grundlagen.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Grundlagen"
              StartupUri="MainWindow.xaml">
+    <!--Die StartupUri beinhaltet den Pfad der Xaml-Datei, welche das Fenster beinhaltet, welches zuerst geöffnet
+    werden soll.-->
     <Application.Resources>
          
     </Application.Resources>

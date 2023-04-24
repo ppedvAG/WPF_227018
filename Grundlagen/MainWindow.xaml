@@ -1,15 +1,23 @@
-﻿<Window x:Class="Grundlagen.MainWindow"
+﻿<!--vgl. CodeBehind und App.xaml-->
+<!--In dem Haupt-Tag (Window/Page) des XAML-Dokuments müssen die einzelnen Namespaces referenziert werden.
+    Jedem Namespace wird dabei ein Key zugeordnet, über welchen diese angesprochen werden-->
+<Window x:Class="Grundlagen.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Grundlagen"
         Title="Grundlagen" Height="400" Width="292">
     <Window.Content>
+
+        <!--In WPF darf jedes Window/jede Page einen Haupt-Layoutcontainer enthalten, in welchem alle
+        weiteren Container und Controls beinhaltet sind (vgl. Content-Property)-->
         <StackPanel>
             <StackPanel.Children>
 
                 <TextBox Margin="20" Text="Inhalt"/>
                 <Button Margin="10" HorizontalAlignment="Right" Content="Ok"/>
 
+                <!--Properties können bei einfacher Belegung direkt im Einleitungstag zugewiesen werden.
+                x:Name gibt hierbei die Variablenbezeichnung für das Objekt an, über welche es im CodeBehind angesprochen werden kann. -->
                 <Button Content="Klick Mich"
                         x:Name="Btn_KlickMich" 
                         FontSize="20"
@@ -20,9 +28,16 @@
 
                 <Button>
 
+                    <!--Controls, welche eine Content-Eigenschaft besitzen, kann diese zwischen den Tags
+                    zugewiesen werden. Ist die Content-Eigenschaft nicht vorhanden, kann hier die entsprechende 
+                    'Haupt'-Eigenschaft gesetzt werden (z.B. Textbox.Text).-->
                     <TextBox Text="Hallo" Width="100"/>
 
+                    <!--Wenn eine Property mit komplexen Objekten befüllt werden sollen, muss diese Property ausgelagert werden.-->
                     <Button.Background>
+                        <!--Button.Background entspricht hier der Background-Property-Variablen des Buttons ->
+                        LinearGradiantBrush ist der Aufruf des Konstruktors der LinearGradientBrush-Klasse und weist
+                        das neue Objekt der Property zu-->
                         <LinearGradientBrush>
                             <GradientStop Color="LightBlue" Offset="0"/>
                             <GradientStop Color="DarkBlue" Offset="1"/>

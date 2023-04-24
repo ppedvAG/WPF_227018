@@ -22,6 +22,9 @@ namespace Grundlagen
     {
         public MainWindow()
         {
+            //Dies verweist auf eine Methode in der (versteckten) automatisch generierten zweiten Klassen-Datei (*.g.i.cs),
+            //welche für das Rendering des XAML-Codes verantwortlich ist. InitializeComponent() erstellt die
+            //Steuerelement-Objekte und muss daher als erste Methode des Konstruktors bestehen bleiben
             InitializeComponent();
 
             Btn_KlickMich.Background = new SolidColorBrush(Colors.Blue);
@@ -30,8 +33,11 @@ namespace Grundlagen
         private void Btn_KlickMich_Click(object sender, RoutedEventArgs e)
         {
             this.Background = new SolidColorBrush(Colors.LightGreen);
+
+            //Verändern des Inhalts des Buttons
             //Btn_KlickMich.Content = "Button wurde geklickt";
 
+            //Ändern einer UI-Property über den Sender-Parameter (beinhaltet den Verursacher des Events)
             (sender as Button).Content = "Button wurde geklickt";
         }
     }
