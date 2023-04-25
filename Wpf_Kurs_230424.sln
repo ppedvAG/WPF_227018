@@ -11,9 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personendatenbank", "Person
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M03_Container", "Container\M03_Container.csproj", "{88B682A2-4DA8-4444-8366-F04884E80ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventRouting", "EventRouting\EventRouting.csproj", "{8146F5C3-BEFF-4783-AD36-3A24D99684B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M04_EventRouting", "EventRouting\M04_EventRouting.csproj", "{8146F5C3-BEFF-4783-AD36-3A24D99684B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBinding", "PropertyBinding\PropertyBinding.csproj", "{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_PropertyBinding", "PropertyBinding\M05_PropertyBinding.csproj", "{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{EC9531E4-9E14-4DFC-8550-BF2A01A0A332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBinding", "DataBinding\DataBinding.csproj", "{1721D66E-5367-417D-90E2-1BA9412DABF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC9531E4-9E14-4DFC-8550-BF2A01A0A332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9531E4-9E14-4DFC-8550-BF2A01A0A332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9531E4-9E14-4DFC-8550-BF2A01A0A332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9531E4-9E14-4DFC-8550-BF2A01A0A332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1721D66E-5367-417D-90E2-1BA9412DABF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1721D66E-5367-417D-90E2-1BA9412DABF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1721D66E-5367-417D-90E2-1BA9412DABF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1721D66E-5367-417D-90E2-1BA9412DABF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
