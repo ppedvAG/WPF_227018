@@ -1,29 +1,40 @@
-﻿<Window x:Class="DataBinding.MainWindow"
+﻿<!--vgl. CodeBehind und Person.cs-->
+<Window x:Class="DataBinding.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBinding"
         mc:Ignorable="d"
-        Title="MainWindow" Height="423" Width="388">
-    <StackPanel Margin="10">
+        Title="MainWindow" Height="476" Width="405"
+        x:Name="Wnd_Main">
+    <StackPanel>
 
         <StackPanel x:Name="Spl_DataContextBsp">
+            <!--Der DataContext repräsentiert das Datenobjekt, auf welches sich der
+            entsprechende Bereich fokussiert (hier das StackPanel). Innerhalb dieses
+            Bereichs kann per Kurzbindung auf dieses Objekt zugegriffen werden-->
             <StackPanel.DataContext>
-                <local:Person Name="Anna Nass" Alter="34"/>
+                <local:Person Vorname="Anna" Nachname="Meier" Alter="29"/>
             </StackPanel.DataContext>
 
-            <TextBox Text="{Binding Path=Name}"/>
+            <TextBox Text="{Binding Path=Vorname}"/>
+            <TextBlock Text="{Binding Nachname}"/>
             <TextBlock Text="{Binding Alter}"/>
-            <TextBlock Text="{Binding WichtigeTage[1].Year}"/>
+            <TextBlock Text="{Binding WichtigeTage[0].Year}"/>
 
             <Button x:Name="Btn_Show" Content="Show" Click="Btn_Show_Click"/>
             <Button x:Name="Btn_Altern" Content="Altern" Click="Btn_Altern_Click"/>
+            <Button Content="New Day" x:Name="Btn_NewDay" Click="Btn_NewDay_Click"/>
+
         </StackPanel>
 
+        <!--ItemControls können an Listen angebunden werden, durch welche sie mit Objekten
+        befüllt werden-->
         <ListBox x:Name="Lbx_Personen" Height="100"
                  ItemsSource="{Binding Personenliste}"/>
-        <Button x:Name="Btn_Add" Content="Neue Person" Click="Btn_Add_Click"/>
-        <Button x:Name="Btn_Delete" Content="Lösche Person" Click="Btn_Delete_Click"/>
+        <Button x:Name="Btn_Neu" Content="Neu" Click="Btn_Neu_Click"/>
+        <Button x:Name="Btn_Löschen" Content="Löschen" Click="Btn_Löschen_Click"/>
+
     </StackPanel>
 </Window>
