@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M03_Container", "Container\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventRouting", "EventRouting\EventRouting.csproj", "{8146F5C3-BEFF-4783-AD36-3A24D99684B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBinding", "PropertyBinding\PropertyBinding.csproj", "{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8146F5C3-BEFF-4783-AD36-3A24D99684B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8146F5C3-BEFF-4783-AD36-3A24D99684B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8146F5C3-BEFF-4783-AD36-3A24D99684B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205CFD2F-7AA2-49A3-84B5-4209D628C5E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
