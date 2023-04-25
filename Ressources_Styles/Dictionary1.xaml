@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <sys:String x:Key="StringAusDict">Klick Mich!!</sys:String>
-    
+    <!--ResourceDictionaries können applikationsübergreifend verwendet werden, da sie eigene Dateien sind.
+    Sie müssen in einem Resource-Feld angemeldet werden (vgl. App.xaml)-->
+    <sys:String x:Key="StringAusDict">Klick Mich !!</sys:String>
+
 </ResourceDictionary>

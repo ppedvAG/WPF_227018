@@ -27,7 +27,8 @@ namespace Ressources_Styles
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Spl_Main.Resources["Scb_Green"] = new SolidColorBrush(Colors.Orange);
+            //Manipulation einer Ressource über deren Container und Key (Objekte, welche dynamisch angebunden sind, übernehmen sofort die Veränderung)
+            Spl_Main.Resources["Scb_LightGreen"] = new SolidColorBrush(Colors.LightBlue);
         }
     }
 }
