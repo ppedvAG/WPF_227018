@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M08_Templates", "Templates\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M09_Validation", "Validation\M09_Validation.csproj", "{2962AE2B-2055-40FF-9772-FE1E55944DFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trigger", "Trigger\Trigger.csproj", "{D2B9BD68-BA9C-49A3-907E-7BD9877CD167}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M10_Trigger", "Trigger\M10_Trigger.csproj", "{D2B9BD68-BA9C-49A3-907E-7BD9877CD167}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
