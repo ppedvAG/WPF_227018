@@ -43,5 +43,10 @@ namespace Trigger
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BoolVal)));
         }
+
+        private void ColorPicker_PickedColorChanged(object sender, RoutedPropertyChangedEventArgs<SolidColorBrush> e)
+        {
+            Tbl_Show.Text = $"{e.OldValue} -> {e.NewValue}";
+        }
     }
 }
