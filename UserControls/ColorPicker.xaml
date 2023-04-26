@@ -6,98 +6,108 @@
              xmlns:local="clr-namespace:UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             x:Name="Uc_ColorPicker">
-    <Grid Margin="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+             x:Name="Uc_Colorpicker">
 
-        <TextBlock Text="R:" Foreground="Red"/>
-        <Slider Grid.Column="1" 
+    <!--UserControls werden verwendet um eigene Control-Elemente zu erstellen und zu versiegeln, so dass der Benutzer die Properties
+    der Teilelemente nicht mehr direkt verwendet kann. Vgl. CodeBehind-->
+    <UserControl.Resources>
+        <local:DoublesToBrushConverter x:Key="doubles2brush"/>
+        <SolidColorBrush Color="Black" x:Key="fallbackBrush"/>
+    </UserControl.Resources>
+
+    <StackPanel>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="Lbl_MyContent" Content="{Binding ElementName=Uc_Colorpicker, Path=MyContent}" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="R:" Foreground="Red" Grid.Row="1"/>
+            <Slider Grid.Column="1"  Grid.Row="1"
                     Minimum="0" Maximum="255" Margin="5,0"
                     x:Name="Sdr_Red"
                     Value="255"
                     IsSnapToTickEnabled="True"/>
-        <TextBox Grid.Column="2" Width="40" 
+            <TextBox Grid.Column="2" Width="40" Grid.Row="1"
                      Text="{Binding ElementName=Sdr_Red, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBlock Grid.Row="1"
+            <TextBlock Grid.Row="2"
                        Text="G:" Foreground="Green"/>
-        <Slider Grid.Row="1" Grid.Column="1" 
+            <Slider Grid.Row="2" Grid.Column="1" 
                     Minimum="0" Maximum="255" Margin="5,0"
                     x:Name="Sdr_Green"
                     Value="255"
                     IsSnapToTickEnabled="True"/>
-        <TextBox Grid.Column="2" Grid.Row="1" Width="40" 
+            <TextBox Grid.Column="2" Grid.Row="2" Width="40" 
                      Text="{Binding ElementName=Sdr_Green, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBlock Grid.Row="2"
+            <TextBlock Grid.Row="3"
                        Text="B:" Foreground="Blue"/>
-        <Slider Grid.Row="2" Grid.Column="1" 
+            <Slider Grid.Row="3" Grid.Column="1" 
                     Minimum="0" Maximum="255" Margin="5,0"
                     x:Name="Sdr_Blue"
                     Value="255"
                     IsSnapToTickEnabled="True"/>
-        <TextBox Grid.Column="2" Grid.Row="2" Width="40" 
+            <TextBox Grid.Column="2" Grid.Row="3" Width="40" 
                      Text="{Binding ElementName=Sdr_Blue, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <TextBlock Grid.Row="3"
+            <TextBlock Grid.Row="4"
                        Text="A:"/>
-        <Slider Grid.Row="3" Grid.Column="1" 
+            <Slider Grid.Row="4" Grid.Column="1" 
                 Minimum="0" Maximum="255" Margin="5,0"
                 x:Name="Sdr_Alpha"
                 Value="255"
                 IsSnapToTickEnabled="True"/>
-        <TextBox Grid.Column="2" Grid.Row="3" Width="40" 
+            <TextBox Grid.Column="2" Grid.Row="4" Width="40" 
                  Text="{Binding ElementName=Sdr_Alpha, Path=Value, UpdateSourceTrigger=PropertyChanged}"/>
 
 
-        <TextBlock Text="{Binding ElementName=Rct_Output, Path=Fill, StringFormat='Picked color: {0}'}"
+            <TextBlock Text="{Binding ElementName=Rct_Output, Path=Fill, StringFormat='Picked color: {0}', UpdateSourceTrigger=PropertyChanged}"
                    HorizontalAlignment="Center" 
                    Margin="5"
-                   Grid.Row="4" Grid.ColumnSpan="3"/>
+                   Grid.Row="5" Grid.ColumnSpan="3"
+                   x:Name="Tbl_Output"/>
 
-        <Border BorderBrush="Black" BorderThickness="1" 
+
+            <Border BorderBrush="Black" BorderThickness="1" 
                 Width="100" Height="100"
-                Grid.Row="5" Grid.ColumnSpan="3">
+                Grid.Row="6" Grid.ColumnSpan="3">
 
-            <Border.Visibility>
-                <Binding ElementName="Uc_ColorPicker" Path="ShowRectangle">
-                    <Binding.Converter>
-                        <BooleanToVisibilityConverter/>
-                    </Binding.Converter>
-                </Binding>
-            </Border.Visibility>
-            
-            <Rectangle x:Name="Rct_Output" Width="100" Height="100">
-                <Rectangle.Fill>
-                    <MultiBinding>
+                <Border.Visibility>
+                    <Binding ElementName="Uc_Colorpicker" Path="ShowRectangle">
+                        <Binding.Converter>
+                            <BooleanToVisibilityConverter/>
+                        </Binding.Converter>
+                    </Binding>
+                </Border.Visibility>
 
-                        <MultiBinding.Converter>
-                            <local:DoublesToBrushConverter/>
-                        </MultiBinding.Converter>
+                <Rectangle x:Name="Rct_Output" Width="100" Height="100">
+                    <Rectangle.Fill>
+                        <MultiBinding Converter="{StaticResource doubles2brush}" FallbackValue="{StaticResource fallbackBrush}">
 
-                        <Binding ElementName="Sdr_Red" Path="Value"/>
-                        <Binding ElementName="Sdr_Green" Path="Value"/>
-                        <Binding ElementName="Sdr_Blue" Path="Value"/>
-                        <Binding ElementName="Sdr_Alpha" Path="Value"/>
-                    </MultiBinding>
-                </Rectangle.Fill>
-            </Rectangle>
-        </Border>
+                            <Binding ElementName="Sdr_Red" Path="Value"/>
+                            <Binding ElementName="Sdr_Green" Path="Value"/>
+                            <Binding ElementName="Sdr_Blue" Path="Value"/>
+                            <Binding ElementName="Sdr_Alpha" Path="Value"/>
 
-        <Label x:Name="Lbl_MyContent" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Center"
-               Content="{Binding ElementName=Uc_ColorPicker, Path=MyContent}"/>
-    </Grid>
+                        </MultiBinding>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Border>
+        </Grid>
+    </StackPanel>
 </UserControl>
+
+<!--Beispiel-Einbindung in M10_Trigger-->

@@ -60,11 +60,14 @@
         <Button x:Name="Btn_Ändern" Click="Btn_Ändern_Click" Content="Ändern"/>
         <Separator Margin="5"/>
 
-        <uc:ColorPicker x:Name="ColorPicker" ShowRectangle="False"
-                        PickedColorChanged="ColorPicker_PickedColorChanged">
-            <Button Content="Hallo" uc:ColorPicker.Count="23"/>
+        <!--Beispiel-Einbindung des UserControls aus M11_UserControls-->
+        <uc:ColorPicker x:Name="ColorPicker" Tap="ColorPicker_Tap" PickedColorChanged="ColorPicker_PickedColorChanged">
+            Mein Content
         </uc:ColorPicker>
+        <!--Bsp-Verwendung einer AttachedProperty aus der ColorPicker-Klasse-->
+        <Button Content="Hallo" uc:ColorPicker.Count="3" Click="Button_Click"/>
 
-        <TextBlock x:Name="Tbl_Show"/>
+        <!--Anzeige des PropertyChanged-Events-->
+        <TextBlock x:Name="Tbl_Changed"/>
     </StackPanel>
 </Window>

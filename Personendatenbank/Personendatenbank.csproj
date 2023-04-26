@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="IntegerUpDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PersonenDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +75,9 @@
   <ItemGroup>
     <Compile Include="ColorsConverter.cs" />
     <Compile Include="GenderToBoolConverter.cs" />
+    <Compile Include="IntegerUpDown.xaml.cs">
+      <DependentUpon>IntegerUpDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonenDialog.xaml.cs">
       <DependentUpon>PersonenDialog.xaml</DependentUpon>
