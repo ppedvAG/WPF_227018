@@ -69,6 +69,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorsConverter.cs" />
     <Compile Include="GenderToBoolConverter.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonenDialog.xaml.cs">

@@ -19,6 +19,13 @@
 
     <Window.Resources>
         <local:GenderToBoolConverter x:Key="gender2bool"/>
+
+        <ObjectDataProvider x:Key="Odp_ColorsProperties"
+               	            MethodName="GetProperties"
+          		            ObjectInstance="{x:Type Colors}"/>
+
+        <local:ColorsConverter x:Key="colorsConverter"/>
+
     </Window.Resources>
 
     <Grid Margin="10">
@@ -65,13 +72,25 @@
                   Grid.Column="1" Grid.Row="3"
                   IsChecked="{Binding Verheiratet}"/>
 
+        <!--SelectedValue="{Binding Lieblingsfarbe}"    -->
         <ComboBox x:Name="Cbb_Lieblingsfarbe"
                   Grid.Column="1" Grid.Row="4"
-                  SelectedValue="{Binding Lieblingsfarbe}">
-            <ComboBoxItem Content="Grün" Foreground="Green"/>
-            <ComboBoxItem Content="Blau" Foreground="Blue"/>
-            <ComboBoxItem Content="Rot" Foreground="Red"/>
-            <ComboBoxItem Content="Gelb" Foreground="Yellow"/>
+                  VerticalAlignment="Center"
+                  Margin="2"
+                  SelectedIndex="{Binding Lieblingsfarbe, Converter={StaticResource colorsConverter}, ConverterParameter={StaticResource Odp_ColorsProperties}}"
+                  SelectedValuePath="Name"
+                                  
+                  ItemsSource="{Binding Source={StaticResource Odp_ColorsProperties}}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Border BorderBrush="Black" BorderThickness="1" Width="20" Height="20" Margin="5,0">
+                            <Rectangle Width="20" Height="20" Fill="{Binding Name}"/>
+                        </Border>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
 
         <StackPanel Margin="2"
