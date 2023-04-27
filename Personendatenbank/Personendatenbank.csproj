@@ -59,6 +59,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Db_Uebersicht.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GlobalResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorsConverter.cs" />
+    <Compile Include="ColorToBrushConverter.cs" />
+    <Compile Include="Db_Uebersicht.xaml.cs">
+      <DependentUpon>Db_Uebersicht.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GenderToBoolConverter.cs" />
     <Compile Include="IntegerUpDown.xaml.cs">
       <DependentUpon>IntegerUpDown.xaml</DependentUpon>
@@ -82,6 +90,7 @@
     <Compile Include="PersonenDialog.xaml.cs">
       <DependentUpon>PersonenDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PersonToBoolConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

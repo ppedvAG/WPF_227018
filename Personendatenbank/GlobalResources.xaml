@@ -15,6 +15,11 @@
         </Setter>
         <Setter Property="FontSize"  Value="{StaticResource Dbl_Fontsize}"/>
     </Style>
+    
+    <Style TargetType="Menu">
+        <Setter Property="FontSize" Value="{StaticResource Dbl_Fontsize}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+    </Style>
 
     <Style TargetType="FrameworkElement" x:Key="Sty_Base">
         <Setter Property="Margin" Value="2"/>

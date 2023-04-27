@@ -34,6 +34,8 @@ namespace Personendatenbank
             if (neuePerson.Kinder > 0) ausgabe = ausgabe + $"\nHat {neuePerson.Kinder} {(neuePerson.Kinder == 1 ? "Kind" : "Kinder")}";
             if (MessageBox.Show(ausgabe + "\nAbspeichern?", neuePerson.Vorname + " " + neuePerson.Nachname, MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
             {
+                this.DialogResult = true;
+
                 this.Close();
             }
         }
