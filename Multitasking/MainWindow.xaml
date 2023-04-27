@@ -1,0 +1,44 @@
+﻿<Window x:Class="Multitasking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multitasking"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="371" Width="456">
+    <StackPanel>
+        <StackPanel.DataContext>
+            <local:AsyncDataSource/>
+        </StackPanel.DataContext>
+
+        <Button x:Name="Btn_LongTask"
+                Content="Start Long"
+                Click="Btn_LongTask_Click"/>
+        <TextBlock x:Name="Tbl_LongTask" HorizontalAlignment="Center"/>
+        
+        <Button x:Name="Btn_ContinueLongTask"
+                Content="Continue Long"
+                Click="Btn_ContinueLongTask_Click"/>
+        <TextBlock x:Name="Tbl_ContinueLongTask" HorizontalAlignment="Center"/>
+        
+        <Button x:Name="Btn_ShortTask"
+                Content="Start Short"
+                Click="Btn_ShortTask_Click"/>
+        <TextBlock x:Name="Tbl_ShortTask" HorizontalAlignment="Center"/>
+
+        <TextBlock Text="{Binding Fast}"/>
+        <TextBlock Text="{Binding Slower, IsAsync=True}"/>
+        <TextBlock Text="{Binding Slow, IsAsync=True}"/>
+
+        <TextBlock>
+            <TextBlock.Text>
+                <PriorityBinding>
+                    <Binding Path="Slow" IsAsync="True"/>
+                    <Binding Path="Slower" IsAsync="True"/>
+                    <Binding Path="Fast"/>
+                </PriorityBinding> 
+            </TextBlock.Text> 
+        </TextBlock>
+        
+    </StackPanel>
+</Window>

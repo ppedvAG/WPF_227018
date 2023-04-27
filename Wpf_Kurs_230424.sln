@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M13_Commands", "Commands\M1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M14_MVVM", "MVVM\M14_MVVM.csproj", "{D681B232-D3E0-4917-8914-7F6A6F0A05BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multitasking", "Multitasking\Multitasking.csproj", "{6C7C2D31-AD34-468D-87A7-2B80875CEBE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C7C2D31-AD34-468D-87A7-2B80875CEBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C7C2D31-AD34-468D-87A7-2B80875CEBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C7C2D31-AD34-468D-87A7-2B80875CEBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C7C2D31-AD34-468D-87A7-2B80875CEBE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
