@@ -6,21 +6,28 @@
         xmlns:vm="clr-namespace:MVVM.ViewModel"
         xmlns:local="clr-namespace:MVVM.View"
         mc:Ignorable="d"
-        Title="StartView" Height="186" Width="439"
+        Title="Personendatenbank" Height="169" Width="362"
+        Style="{StaticResource Sty_Wnd}"
         x:Name="Wnd_Start">
 
+    <!--Im View-Teil von MVVM-Projekten werden die Fenster per XAML definiert. Diese Klassen dürfen keinen Code-Behind
+    besitzen. Diese Aufgabe wird von dem entsprechenden ViewModel übernommen, welches als DataContext des Views gesetzt
+    wird. Dies geschieht hier, im ersten Fenster des Programms, inner halb des XAML-Codes.-->
     <Window.DataContext>
         <vm:StartViewModel/>
     </Window.DataContext>
-    
+
+    <!--Die Eigenschaften werden über Kurzbindungen an den DataContext (das ViewModel) gebunden.-->
     <StackPanel Margin="10">
         <TextBlock Text="Personendatenbank" FontSize="30" HorizontalAlignment="Center"/>
 
         <WrapPanel Margin="10" HorizontalAlignment="Center">
             <Button Content="Lade DB" Command="{Binding LadeDbCmd}"/>
+            <!--Das OeffneDbCmd bekommt über den Parameter das aktuelle View mit übergeben, damit dessen
+            Close-Methode ausgeführt werden kann.-->
             <Button Content="Öffne DB" Command="{Binding ÖffneDbCmd}" CommandParameter="{Binding ElementName=Wnd_Start}"/>
         </WrapPanel>
 
-        <TextBlock Text="{Binding AnzahlPersonen,StringFormat='Es wurden {0} Personen geladen.'}" HorizontalAlignment="Center"/>
+        <TextBlock Text="{Binding AnzahlPersonen, StringFormat=Es wurden {0} Personen geladen.}" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

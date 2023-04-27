@@ -7,26 +7,40 @@ using System.Windows.Input;
 
 namespace Commands
 {
+    //Allgemeine generische Commandklasse, welche individuell befüllt werden kann.
+
+    //ICommand ermöglicht dieser Klasse, als Command verwendet zu werden
     public class CustomCommand : ICommand
     {
-        public Action<object> ExecuteMethod { get; set; }
-        public Func<object, bool> CanExecuteMethod { get; set; }
+        //Delegates zum Speichern der Logik
+        public Action<object> ExecuteMethode { get; set; }
+        public Func<object, bool> CanExecuteMethode { get; set; }
 
-        public CustomCommand(Action<object> exe, Func<object, bool> can)
+        //Konstruktor
+        public CustomCommand(Action<object> exe, Func<object, bool> can = null)
         {
-            ExecuteMethod = exe;
-            CanExecuteMethod = can;
+            ExecuteMethode = exe;
+
+            CanExecuteMethode = (can == null) ? (p => true) : can;
         }
 
-
+        //Anmeldung des Commands im CommandManager
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public bool CanExecute(object parameter) => CanExecuteMethod(parameter);
+        //Bedingung für die Ausführung
+        public bool CanExecute(object parameter)
+        {
+            return CanExecuteMethode(parameter);
+        }
 
-        public void Execute(object parameter) => ExecuteMethod(parameter);
+        //Aktion bei Ausführung
+        public void Execute(object parameter)
+        {
+            ExecuteMethode(parameter);
+        }
     }
 }

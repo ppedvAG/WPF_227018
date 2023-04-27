@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -32,7 +33,8 @@ namespace MVVM.ViewModel
                 (
                     p =>
                     {
-                        //TODO: Nächstes Fenster öffnen
+                        ListView listView= new ListView();
+                        listView.Show();
 
                         (p as Window).Close();
                     },
