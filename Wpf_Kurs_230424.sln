@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M10_Trigger", "Trigger\M10_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M11_UserControls", "UserControls\M11_UserControls.csproj", "{4CC3E374-5662-4B38-897D-67B75AFD3A7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Commands\Commands.csproj", "{589819FC-B17F-4AB3-9FB3-E70F1C6166B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{D681B232-D3E0-4917-8914-7F6A6F0A05BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{4CC3E374-5662-4B38-897D-67B75AFD3A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CC3E374-5662-4B38-897D-67B75AFD3A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CC3E374-5662-4B38-897D-67B75AFD3A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589819FC-B17F-4AB3-9FB3-E70F1C6166B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589819FC-B17F-4AB3-9FB3-E70F1C6166B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589819FC-B17F-4AB3-9FB3-E70F1C6166B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589819FC-B17F-4AB3-9FB3-E70F1C6166B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D681B232-D3E0-4917-8914-7F6A6F0A05BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
